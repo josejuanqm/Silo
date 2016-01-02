@@ -2,6 +2,8 @@
 
 Silo is a extremly easy to use and very basic image loader for Swift.
 
+![alt tag](https://i.imgur.com/g7BimCx.gif)
+
 ### Version
 1.0
 
