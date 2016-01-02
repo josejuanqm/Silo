@@ -25,6 +25,6 @@ Silo.fetchUrl("http://images.apple.com/v/ipad-pro/c/images/overview/canvas_large
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
-   [dld]: <https://github.com/josejuanqm/Silo/blob/master/SiloView.framework.zip>
+   [dld]: <https://github.com/josejuanqm/Silo/blob/master/SiloView.framework.zip?raw=true>
 
 
