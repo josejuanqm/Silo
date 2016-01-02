@@ -1,0 +1,10 @@
+framework module SiloView {
+  umbrella header "SiloView.h"
+
+  export *
+  module * { export * }
+}
+
+module SiloView.Swift {
+    header "SiloView-Swift.h"
+}
