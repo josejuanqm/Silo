@@ -13,11 +13,12 @@ class ViewController: UIViewController {
     
     @IBOutlet var silo: SiloImageView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         silo.imageContentMode = .ScaleAspectFit
-        silo.loaderColor = UIColor.redColor()
+        silo.loaderColor = UIColor.darkGrayColor()
         silo.fetchUrl("http://images.apple.com/v/ipad-pro/c/images/overview/canvas_large_2x.jpg")
     }
 
