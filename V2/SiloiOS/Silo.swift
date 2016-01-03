@@ -1,6 +1,6 @@
 //
 //  Silo.swift
-//  Ody
+//  Silo
 //
 //  Created by Jose Quintero on 1/2/16.
 //  Copyright © 2016 Quintero. All rights reserved.
@@ -89,7 +89,7 @@ extension SiloView{
     func drawProgressLoader(frame frame: CGRect = CGRectMake(0, 0, 200, 200), shapeColor: UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000), progressFraction: CGFloat = 0) {
         let expression: CGFloat = progressFraction != 0 ? progressFraction * -360 : 1
         
-       
+        
         let ovalPath = UIBezierPath(ovalInRect: CGRectMake(frame.minX + floor(frame.width * 0.05500 + 0.5), frame.minY + floor(frame.height * 0.05000 + 0.5), floor(frame.width * 0.95000 + 0.5) - floor(frame.width * 0.05500 + 0.5), floor(frame.height * 0.94500 + 0.5) - floor(frame.height * 0.05000 + 0.5)))
         shapeColor.setStroke()
         ovalPath.lineWidth = 5

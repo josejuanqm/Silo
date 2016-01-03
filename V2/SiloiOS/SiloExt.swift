@@ -1,6 +1,6 @@
 //
-//  OdyExt.swift
-//  Ody
+//  SiloExt.swift
+//  Silo
 //
 //  Created by Jose Quintero on 1/2/16.
 //  Copyright © 2016 Quintero. All rights reserved.
@@ -30,8 +30,10 @@ extension UIImageView{
         self.clipsToBounds = true
         let cM = self
         let siloView = SiloView(frame: CGRectMake(0, 0, cM.bounds.width, cM.bounds.height))
+        siloView.backgroundColor = self.backgroundColor
+        siloView.opaque = false
         siloView.fetch(withUrl, parent: cM)
         self.addSubview(siloView)
     }
-
+    
 }
