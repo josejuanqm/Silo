@@ -11,6 +11,16 @@ import UIKit
 
 extension UIImageView{
     
+    convenience init(withUrl: String, loaderColor: UIColor, frame: CGRect){
+        self.init(frame: frame)
+        self.toSiloView(withUrl, loaderColor: loaderColor)
+    }
+    
+    convenience init(withUrl: String, frame: CGRect){
+        self.init(frame: frame)
+        self.toSiloView(withUrl)
+    }
+    
     func setLoaderColorForSiloView(color: UIColor) -> Bool{
         for i in 0..<self.subviews.count{
             if let sView = self.subviews[i] as? SiloView{
@@ -86,7 +96,8 @@ internal class SiloView: UIView, NSURLSessionDelegate{
     }
     
     func createDownloadTask(url: String) {
-        let downloadRequest = NSMutableURLRequest(URL: NSURL(string: url)!)
+        let urls = url.stringByReplacingOccurrencesOfString(" ", withString: "-", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        let downloadRequest = NSMutableURLRequest(URL: NSURL(string: urls)!)
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration(), delegate: self, delegateQueue: NSOperationQueue.mainQueue())
         
         downloadTask = session.downloadTaskWithRequest(downloadRequest)
