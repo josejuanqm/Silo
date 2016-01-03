@@ -16,6 +16,8 @@ Just drag and drop both Silo and SiloExt files.
 
 ### Usage
 
+##### If you are using AutoLayout please call after the view appears or in ViewDidAppear method
+
 #### UIImageView from storyboard
 ```swift
 imageView.toSiloView(String)
