@@ -14,7 +14,8 @@ Download from [here] [dld]
 
 Just drag and drop both Silo and SiloExt files.
 
-- Properties
+### Usage
+
 ```swift
 imageView.toSiloView("URL_TO_IMG")
 imageView.setLoaderColorForSiloView(UIColor.redColor())
