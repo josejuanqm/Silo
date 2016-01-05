@@ -34,6 +34,9 @@ extension UIImageView{
     func toSiloView(withUrl: String){
         for i in 0..<self.subviews.count{
             if let sView = self.subviews[i] as? SiloView{
+                if sView.url == withUrl{
+                    return
+                }
                 sView.removeFromSuperview()
             }
         }
@@ -47,8 +50,12 @@ extension UIImageView{
     }
     
     func toSiloView(withUrl: String, loaderColor: UIColor){
+        print(self.subviews.count)
         for i in 0..<self.subviews.count{
             if let sView = self.subviews[i] as? SiloView{
+                if sView.url == withUrl{
+                    return
+                }
                 sView.removeFromSuperview()
             }
         }
@@ -90,6 +97,7 @@ internal class SiloView: UIView, NSURLSessionDelegate{
         let bounds = self.bounds
         drawProgressLoader(frame: bounds, shapeColor: self.loaderColor, progressFraction: CGFloat(self.progress))
         if runned == false{
+            self.alpha = 1
             createDownloadTask(url)
             runned = true
         }
@@ -119,7 +127,8 @@ internal class SiloView: UIView, NSURLSessionDelegate{
     }
     
     func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
-        self.removeFromSuperview()
+        //self.removeFromSuperview()
+        self.alpha = 0
         let img = UIImage(data: NSData(contentsOfURL: location)!)
         print(parent)
         self.parent.image = img
