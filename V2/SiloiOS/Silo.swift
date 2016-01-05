@@ -127,7 +127,6 @@ internal class SiloView: UIView, NSURLSessionDelegate{
     }
     
     func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
-        //self.removeFromSuperview()
         self.alpha = 0
         let img = UIImage(data: NSData(contentsOfURL: location)!)
         print(parent)
